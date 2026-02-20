@@ -15,7 +15,7 @@ CREDENTIAL_PATHS = [
     Path(".credentials") / "pokee-deep-research.txt",
 ]
 
-OUTPUT_DIR = Path.home() / ".openclaw" / "workspace" / "research-output"
+OUTPUT_DIR = Path(os.environ.get("POKEE_OUTPUT_DIR", str(Path.home() / ".openclaw" / "workspace" / "research-output")))
 API_URL = "https://deepresearch.pokee.ai/deep-research"
 
 def get_api_token():
